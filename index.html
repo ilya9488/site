@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-	<!--viewport чтбы адаптив работал -->
+	<meta charset="UTF-8">
   <meta name="viewport" content="width=device=width, initial-scale=1">
 	<title>Гипсолит</title>
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
   <!-- Фавиконка -->
-  <link rel="shortcut icon" href="img/logo.png">
+  <link rel="shortcut icon" href="img/SVG/logo_title.svg">
 </head>
 <body>
 <main class="main"> <!-- main уникальное или главное содержимое html документа -->
@@ -40,7 +39,8 @@
    </div>
   
  <div class="main-content">
-				<!-- Row нужен для создания строки которую будем делить по сетке bootstrap -->
+  <!-- row это правило bootstrap так же как и container и ... -->
+	<!-- row нужен для создания строки/полоски которую будем делить по сетке col-... bootstrap -->
 		<div class="row">
 			<div class="col-lg-6 col-md-7 col-sm-12">
 				<div class="main-title wow fadeInLeft">
@@ -60,21 +60,21 @@
 					<h2 class="main-form-header">Для расчёта точной стоимости <br> закажите <strong>выезд замерщика</strong>
 					</h2>
 					<form class="form" action="mailer/smart.php" method="POST">
-						<label for="#">
-							Ваше имя
-						</label>
-						<input class="form-input" required type="text">
-						<label for="#">
-							Номер телефона
-						</label>
-						<input class="form-input" id="phone" required type="text">
-						<button class="form-btn button" type="submit">
-							Оставьте заявку
-						</button>
-						<small>
-							Подарок в день обращения
-						</small>
-					</form>
+              <label for="#">
+                Ваше имя
+              </label>
+              <input class="form-input" required type="text" name="user_name" placeholder="Введите имя">
+              <label for="#">
+                Номер телефона
+              </label>
+              <input id="phone" class="form-input" type="tel" name="user_phone" placeholder="Введите телефон" required>
+              <button class="form-btn button" type="submit">
+                Оставьте заявку
+              </button>
+              <small>
+                Подарок в день обращения
+              </small>
+            </form>
 				</div>
 			</div>
 	  </div>
@@ -803,42 +803,40 @@
         </h4>
         <p>Оставьте свои контактные данные <br> для связи</p>
           <div class="main-form popup-form">
-            <form class="form" action="#">
+            <form class="form" action="mailer/smart.php" method="POST">
             <label for="#">Ваше имя</label>
-            <input class="form-input" type="text">
+            <input class="form-input" type="text" name="user_name" required placeholder="Ваше имя">
             <label for="#">Номер телефона</label>
-            <input class="form-input" type="text">
+            <input class="form-input" id="phone_popup" type="tel" name="user_phone" required placeholder="Ваш номер телефона">
             <label for="#">Сообщение</label>
-            <textarea class="form-input" rows="5"></textarea>
+            <textarea class="form-input" rows="5" name="user_masage" required placeholder="Ваше сообщение"></textarea>
             <button class="form-btn button" type="submit">Оставьте заявку</button>
             </form>
           </div>
       </div>
     </div>
   </div>
-
+<!-- К ajax запросу ( отправка формы ) -->
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- Библиотека jQuery для работы js на сайте -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Подключаем стили slick slider -->
 <link rel="stylesheet" href="slick/slick.css">
 <link rel="stylesheet" href="slick/slick-theme.css">
 <!-- Подключаем саму библиотеку slick slider -->
 <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
-<!-- Не работает как в видео <script crc="slick/slick.min.js"></script> -->
 <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-<!-- для animate.css -->
 <script src="js/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
 <script src="js/jquery.maskedinput.min.js"></script>
-
 <script>
   jQuery(function($){
    $("#phone").mask("+380(99) 999-9999");
+   $("#phone_popup").mask("+380(99) 999-9999");
 });
-</script>
-<!-- Инициализация wow -->
-<script>
-  new WOW().init();
 </script>
 
   <script>
@@ -856,6 +854,8 @@
       return false;
     });
   </script>
+
+<!-- Не работает как в видео <script crc="slick/slick.min.js"></script> -->
 
 <!-- Иннициализруем сам слайдер -->
 <script>
@@ -902,6 +902,7 @@
   });
 });
 </script>
+
 
 </body>
 </html>
