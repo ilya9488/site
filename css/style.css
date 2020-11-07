@@ -704,7 +704,7 @@ footer {
     right: 0;
   }
   .feedback-text::before {
-    top: -1.9rem;
+    top: -2.1rem;
     height: 18px;
   }
   .feedback-form label {
