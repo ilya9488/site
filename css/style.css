@@ -236,6 +236,13 @@ section {
   height: 2rem;
   border: none;
 }
+button.feedback-slider-btn.feedback-next-btn.slick-arrow, button.feedback-slider-btn.feedback-prev-btn.slick-arrow {
+  display: block;
+  color: white;
+  font-size: 3rem;
+  vertical-align: middle;
+  margin: 0 auto;
+}
 .prev {
   left: 0;
   background: url(../img/left-arrow.svg) center no-repeat;
