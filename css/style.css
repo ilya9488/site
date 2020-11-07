@@ -650,7 +650,7 @@ footer {
     margin-top: 2rem;
   }
   .feedback-text::before {
-    top: -2.5rem;
+    top: -2.05rem;
   }
   .feedback .fotorama {
     margin-bottom: 3rem;
@@ -704,7 +704,7 @@ footer {
     right: 0;
   }
   .feedback-text::before {
-    top: -2.1rem;
+    top: -1.7rem;
     height: 18px;
   }
   .feedback-form label {
@@ -763,7 +763,7 @@ footer {
     right: 0;
   }
   .feedback-text::before {
-    top: -19px;
+    top: -1.7rem;
   }
   .scheme {
     background: none;
